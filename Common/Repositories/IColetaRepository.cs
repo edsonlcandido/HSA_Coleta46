@@ -9,7 +9,7 @@ namespace Common.Repositories
     public interface IColetaRepository
     {
 
-        void adicionar(ColetaModel coletaModel);
+        int adicionar(ColetaModel coletaModel);
         void editar(ColetaModel coletaModel);
         void deletar(int id);
         ColetaModel obterPeloId(int id);

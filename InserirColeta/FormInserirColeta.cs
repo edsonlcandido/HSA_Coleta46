@@ -1,4 +1,5 @@
-﻿using Common.Models;
+﻿using Common.Controllers;
+using Common.Models;
 using Common.Repositories;
 using Common.Views;
 using System;
@@ -303,8 +304,10 @@ namespace InserirColeta
 
             try
             {
-                _coletaRepository.adicionar(_coletaModel);
-                MessageBox.Show("Coleta incluída com sucesso", this.Text.ToString(),MessageBoxButtons.OK);
+                int  coletaId = _coletaRepository.adicionar(_coletaModel);
+                MessageBox.Show($"Coleta incluída com sucesso #{coletaId}", this.Text.ToString(),MessageBoxButtons.OK);
+                IEmail email = new EmailController();
+                email.enviarEmailColetaAdicionada(_coletaModel, coletaId);
                 this.Close();
             }
             catch (Exception ex)
@@ -364,7 +367,21 @@ namespace InserirColeta
             try
             {
                 _coletaRepository.editar(_coletaModel);
-                MessageBox.Show("Coleta alterada com sucesso", this.Text.ToString(), MessageBoxButtons.OK);
+                MessageBox.Show($"Coleta alterada com sucesso  #{_coletaModel.id}", this.Text.ToString(), MessageBoxButtons.OK);
+                IEmail email = new EmailController();
+                switch (_coletaModel.status)
+                {
+                    case "concluído":
+                        email.enviarEmailColetaConcluida(_coletaModel);
+                        break;
+                    case "finalizada - sem coleta":
+                        email.enviarEmailColetaFalhou(_coletaModel);
+                        break;
+                    default:
+                        break;
+                }
+
+                
                 this.Close();
             }
             catch (Exception ex)
