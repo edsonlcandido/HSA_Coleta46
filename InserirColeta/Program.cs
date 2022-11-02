@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Presenters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace InserirColeta
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            ColetaPresenter coletaPresenter = new ColetaPresenter();
+            coletaPresenter.titulo = "Inserir coleta";
+            coletaPresenter.editando = false;
+            coletaPresenter.visualizando = false;
+            Application.Run(new FormInserirColeta(coletaPresenter));
         }
     }
 }

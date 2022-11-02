@@ -1,4 +1,6 @@
-﻿namespace InserirColeta
+﻿using System.Windows.Forms;
+
+namespace InserirColeta
 {
     partial class FormInserirColeta
     {

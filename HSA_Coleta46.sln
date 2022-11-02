@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InserirColeta", "InserirCol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0EB7DD84-DC1F-413D-8A45-D4E758649678}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministrarColeta", "AdministrarColeta\AdministrarColeta.csproj", "{F1ADF7F4-1445-44FE-BCEC-4B963882B892}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0EB7DD84-DC1F-413D-8A45-D4E758649678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EB7DD84-DC1F-413D-8A45-D4E758649678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EB7DD84-DC1F-413D-8A45-D4E758649678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1ADF7F4-1445-44FE-BCEC-4B963882B892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1ADF7F4-1445-44FE-BCEC-4B963882B892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1ADF7F4-1445-44FE-BCEC-4B963882B892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1ADF7F4-1445-44FE-BCEC-4B963882B892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
