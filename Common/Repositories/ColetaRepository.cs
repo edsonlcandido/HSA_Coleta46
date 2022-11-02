@@ -13,7 +13,7 @@ namespace Common.Repositories
     public class ColetaRepository : IColetaRepository
     {
         private readonly string CONNECTION_STRING = @"Data Source=HSA_Coleta.db;";
-        public void adicionar(ColetaModel coletaModel)
+        public int adicionar(ColetaModel coletaModel)
         {
             SQLiteConnection connection = new SQLiteConnection(CONNECTION_STRING);
             SQLiteCommand command = connection.CreateCommand();
@@ -36,7 +36,8 @@ namespace Common.Repositories
                                             obs,
                                             notaFiscal,
                                             valorNotaFiscal,
-                                            status
+                                            status,
+                                            dataColeta
                                         )
                                         VALUES (
                                             @dataInclusao,
@@ -56,7 +57,8 @@ namespace Common.Repositories
                                             @obs,
                                             @notaFiscal,
                                             @valorNotaFiscal,
-                                            @status
+                                            @status,
+                                            @dataColeta
                                         );";
             command.Parameters.Add("@dataInclusao", System.Data.DbType.DateTime).Value = coletaModel.dataInclusao;
             command.Parameters.Add("@solicitante", DbType.String).Value = coletaModel.solicitante;
@@ -76,8 +78,17 @@ namespace Common.Repositories
             command.Parameters.Add("@notaFiscal", DbType.String).Value = coletaModel.notaFiscal;
             command.Parameters.Add("@valorNotaFiscal", DbType.Double).Value = coletaModel.valorNotaFiscal;
             command.Parameters.Add("@status", DbType.String).Value = coletaModel.status;
+            command.Parameters.Add("@dataColeta", System.Data.DbType.DateTime).Value = coletaModel.dataInclusao;
             command.ExecuteNonQuery();
+
+            command.CommandText = "select last_insert_rowid()";
+            Int64 LastRowID64 = (Int64)command.ExecuteScalar();
+
+            int LastRowID = (int)LastRowID64;
+
             connection.Close();
+
+            return LastRowID;
         }
 
         public void deletar(int id)
@@ -181,6 +192,7 @@ namespace Common.Repositories
                     coletasPeloStatus.Add(coletaModel);
                 }
             }
+            connection.Close();
             return coletasPeloStatus;
         }
 
@@ -224,6 +236,7 @@ namespace Common.Repositories
                     coletasPeloStatus.Add(coletaModel);
                 }
             }
+            connection.Close();
             return coletasPeloStatus;
         }
 
@@ -234,7 +247,43 @@ namespace Common.Repositories
 
         public ColetaModel obterPeloId(int id)
         {
-            throw new NotImplementedException();
+            SQLiteConnection connection = new SQLiteConnection(CONNECTION_STRING);
+            SQLiteCommand command = connection.CreateCommand();
+            command.CommandText = $@"SELECT id,
+                                            dataInclusao,
+                                            solicitante,
+                                            setor,
+                                            CC_Projeto,
+                                            dataNecessaria,
+                                            periodoColeta,
+                                            localColeta,
+                                            enderecoColeta,
+                                            localEntrega,
+                                            enderecoEntrega,
+                                            materialDescricao,
+                                            materialDimensoes,
+                                            materialPeso,
+                                            quantidadeVolume,
+                                            obs,
+                                            notaFiscal,
+                                            valorNotaFiscal,
+                                            transportadora,
+                                            valorFrete,
+                                            dataColeta,
+                                            status,
+                                            motivoFalha
+                                        FROM coleta 
+                                        WHERE id = @id;";
+            connection.Open();
+            command.Parameters.Add("@id", DbType.Int32).Value = id;
+            ColetaModel coletaModel = new ColetaModel();
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                coletaModel = readerToColetaModel(reader);
+            }
+            connection.Close();
+
+            return coletaModel;
         }
 
         ColetaModel readerToColetaModel(SQLiteDataReader reader)

@@ -10,8 +10,7 @@ namespace Common.Models
 {
     public class ColetaModel
     {
-        [DisplayName("ID da coleta")]
-        [Browsable(false)]
+        [DisplayName("#")]
         [ReadOnly(true)]
         public int id { get; set; }
         [DisplayName("Data da inclusão")]
