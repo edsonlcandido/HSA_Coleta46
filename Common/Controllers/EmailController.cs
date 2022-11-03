@@ -1,6 +1,7 @@
 ﻿using Common.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Common.Controllers
 
         public void enviarEmailColetaAdicionada(ColetaModel coleta)
         {
-            this._emailDestinatario = "edsonluizcandido+adminColeta@gmail.com";
+            this._emailDestinatario = File.ReadAllText("email.db");
             this._emailTitulo = $"#{coleta.id} Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}";
             this._emailMensagem = 
 $@"Olá,
