@@ -307,7 +307,8 @@ namespace InserirColeta
                 int  coletaId = _coletaRepository.adicionar(_coletaModel);
                 MessageBox.Show($"Coleta incluída com sucesso #{coletaId}", this.Text.ToString(),MessageBoxButtons.OK);
                 IEmail email = new EmailController();
-                email.enviarEmailColetaAdicionada(_coletaModel, coletaId);
+                ColetaModel coletaCriada = _coletaRepository.obterPeloId(coletaId);
+                email.enviarEmailColetaAdicionada(coletaCriada);
                 this.Close();
             }
             catch (Exception ex)

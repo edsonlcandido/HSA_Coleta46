@@ -9,7 +9,7 @@ namespace Common.Controllers
 {
     public  interface IEmail
     {
-        void enviarEmailColetaAdicionada(ColetaModel coleta, int id);
+        void enviarEmailColetaAdicionada(ColetaModel coleta);
         void enviarEmailColetaConcluida(ColetaModel coleta);
         void enviarEmailColetaFalhou(ColetaModel coleta);
     }
