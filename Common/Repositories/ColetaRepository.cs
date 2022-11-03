@@ -277,9 +277,32 @@ namespace Common.Repositories
             connection.Open();
             command.Parameters.Add("@id", DbType.Int32).Value = id;
             ColetaModel coletaModel = new ColetaModel();
-            using (SQLiteDataReader reader = command.ExecuteReader())
+            SQLiteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
             {
-                coletaModel = readerToColetaModel(reader);
+                coletaModel.id = reader.GetInt32(0);
+                coletaModel.dataInclusao = reader.GetDateTime(1);
+                coletaModel.solicitante = reader.GetString(2);
+                coletaModel.setor = reader.GetString(3);
+                coletaModel.CC_Projeto = reader.GetString(4);
+                coletaModel.dataNecessaria = reader.GetDateTime(5);
+                coletaModel.periodoColeta = reader.GetString(6);
+                coletaModel.localColeta = reader.GetString(7);
+                coletaModel.enderecoColeta = reader.GetString(8);
+                coletaModel.localEntrega = reader.GetString(9);
+                coletaModel.enderecoEntrega = reader.GetString(10);
+                coletaModel.materialDescricao = reader.GetString(11);
+                coletaModel.materialDimensoes = reader.GetString(12);
+                coletaModel.materialPeso = reader.GetDouble(13);
+                coletaModel.quantidadeVolume = reader.GetInt32(14);
+                coletaModel.obs = reader.GetString(15);
+                coletaModel.notaFiscal = reader["notaFiscal"].ToString();
+                coletaModel.valorNotaFiscal = reader.GetDouble(17);
+                coletaModel.transportadora = reader.GetString(18);
+                coletaModel.valorFrete = reader.GetDouble(19);
+                coletaModel.dataColeta = reader.GetDateTime(20);
+                coletaModel.status = reader.GetString(21);
+                coletaModel.motivoFalha = reader.GetString(22);
             }
             connection.Close();
 

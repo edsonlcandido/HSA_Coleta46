@@ -18,10 +18,10 @@ namespace Common.Controllers
             
         }
 
-        public void enviarEmailColetaAdicionada(ColetaModel coleta, int id)
+        public void enviarEmailColetaAdicionada(ColetaModel coleta)
         {
             this._emailDestinatario = "edsonluizcandido+adminColeta@gmail.com";
-            this._emailTitulo = $"#{id} Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}";
+            this._emailTitulo = $"#{coleta.id} Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}";
             this._emailMensagem = 
 $@"Olá,
 Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}, material a ser coletado:
