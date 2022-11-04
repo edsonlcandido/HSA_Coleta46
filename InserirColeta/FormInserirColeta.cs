@@ -290,6 +290,25 @@ namespace InserirColeta
                 textBoxMotivoFalha.Visible = false;
                 buttonIncluir.Visible = true;
                 buttonSalvar.Visible = false;
+
+                labelCamposObrigatorios.Visible = true;
+                labelSolicitante.Text += " *";
+                labelSetor.Text += " *";
+                label_CC_Projeto.Text += " *";
+                labelDataNecessesaria.Text += " *";
+                labelPeriodo.Text += " *";
+                labelLocalColeta.Text += " *";
+                labelEnderecoColeta.Text += " *";
+                labelLocalEntrega.Text += " *";
+                labelEndereçoEntrega.Text += " *";
+                labelMaterialDescricao.Text += " *";
+                labelMaterialDimensoes.Text += " *";
+                labelMaterialPeso.Text += " *";
+                labelQuantidadeVolumes.Text += " *";
+                labelNotaFiscal.Text += " *";
+                labelValorNotaFiscal.Text += " *";
+
+                toolTip1.Active = true;
             }
         }
 
@@ -305,7 +324,7 @@ namespace InserirColeta
             try
             {
                 int  coletaId = _coletaRepository.adicionar(_coletaModel);
-                MessageBox.Show($"Coleta incluída com sucesso #{coletaId}", this.Text.ToString(),MessageBoxButtons.OK);
+                MessageBox.Show($"#{coletaId} - Coleta incluída com sucesso", this.Text.ToString(),MessageBoxButtons.OK);
                 IEmail email = new EmailController();
                 ColetaModel coletaCriada = _coletaRepository.obterPeloId(coletaId);
                 email.enviarEmailColetaAdicionada(coletaCriada);
@@ -368,7 +387,7 @@ namespace InserirColeta
             try
             {
                 _coletaRepository.editar(_coletaModel);
-                MessageBox.Show($"Coleta alterada com sucesso  #{_coletaModel.id}", this.Text.ToString(), MessageBoxButtons.OK);
+                MessageBox.Show($"#{_coletaModel.id} - Coleta alterada com sucesso.", this.Text.ToString(), MessageBoxButtons.OK);
                 IEmail email = new EmailController();
                 switch (_coletaModel.status)
                 {

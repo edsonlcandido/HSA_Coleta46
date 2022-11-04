@@ -22,11 +22,13 @@ namespace Common.Controllers
         public void enviarEmailColetaAdicionada(ColetaModel coleta)
         {
             this._emailDestinatario = File.ReadAllText("email.db");
-            this._emailTitulo = $"#{coleta.id} Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}";
+            this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto}".ToUpper();
             this._emailMensagem = 
 $@"Olá,
-Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()}, material a ser coletado:
-{coleta.materialDescricao}
+
+Nova coleta inserida para {coleta.dataNecessaria.ToShortDateString()} {coleta.periodoColeta}.
+
+Material: {coleta.materialDescricao}
 
 Atenciosamente.";
            // Outlook.Application outlookApp = new Outlook.Application();
@@ -40,11 +42,12 @@ Atenciosamente.";
         public void enviarEmailColetaConcluida(ColetaModel coleta)
         {
             this._emailDestinatario = coleta.solicitante;
-            this._emailTitulo = $"#{coleta.id} Sua coleta de {coleta.materialDescricao} foi concluída com sucesso";
+            this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto} - CONCLUÍDA".ToUpper();
             this._emailMensagem =
 $@"Olá,
-Sua coleta solicitada para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()} foi finalizada com sucesso, descrição do material:
-{coleta.materialDescricao}
+Sua coleta solicitada para {coleta.dataNecessaria.ToShortDateString()} foi finalizada com sucesso, descrição do material:
+
+Material: {coleta.materialDescricao}
 
 O material foi coletado em {coleta.dataColeta.ToShortDateString()}
 
@@ -60,10 +63,12 @@ Atenciosamente.";
         public void enviarEmailColetaFalhou(ColetaModel coleta)
         {
             this._emailDestinatario = coleta.solicitante;
-            this._emailTitulo = $"#{coleta.id} Sua coleta de {coleta.materialDescricao} teve algum problema";
+            this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto} - NÃO REALIZADA".ToUpper();
             this._emailMensagem =
 $@"Olá,
-Sua coleta solicitada para {coleta.dataNecessaria.ToShortDateString()} {coleta.dataNecessaria.ToShortTimeString()} não foi possivel, problema ocorrido:
+
+Sua coleta solicitada para {coleta.dataNecessaria.ToShortDateString()} não foi possivel, problema ocorrido:
+
 {coleta.motivoFalha}
 
 Atenciosamente.";

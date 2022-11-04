@@ -30,42 +30,43 @@ namespace InserirColeta
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInserirColeta));
             this.labelTitulo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelSolicitante = new System.Windows.Forms.Label();
+            this.labelSetor = new System.Windows.Forms.Label();
             this.textBoxSolicitante = new System.Windows.Forms.TextBox();
             this.textBoxSetor = new System.Windows.Forms.TextBox();
             this.textBox_CC_Projeto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_CC_Projeto = new System.Windows.Forms.Label();
+            this.labelDataNecessesaria = new System.Windows.Forms.Label();
             this.dateTimePickerDataNecessesaria = new System.Windows.Forms.DateTimePicker();
             this.comboBoxPeriodo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelPeriodo = new System.Windows.Forms.Label();
             this.groupBoxEnderecos = new System.Windows.Forms.GroupBox();
             this.textBoxEnderecoEntrega = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelEndereçoEntrega = new System.Windows.Forms.Label();
             this.textBoxEnderecoColeta = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelEnderecoColeta = new System.Windows.Forms.Label();
             this.textBoxLocalEntrega = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelLocalEntrega = new System.Windows.Forms.Label();
             this.textBoxLocalColeta = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelLocalColeta = new System.Windows.Forms.Label();
             this.groupBoxMaterial = new System.Windows.Forms.GroupBox();
             this.textBoxQuantidadeVolume = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.labelQuantidadeVolumes = new System.Windows.Forms.Label();
             this.textBoxMaterialPeso = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.labelMaterialPeso = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxMaterialDimensoes = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelMaterialDimensoes = new System.Windows.Forms.Label();
             this.textBoxMaterialDescricao = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelMaterialDescricao = new System.Windows.Forms.Label();
             this.textBoxNotaFiscal = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.labelNotaFiscal = new System.Windows.Forms.Label();
             this.textBoxValorNotaFiscal = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.labelValorNotaFiscal = new System.Windows.Forms.Label();
+            this.labelObs = new System.Windows.Forms.Label();
             this.textBoxObs = new System.Windows.Forms.TextBox();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
@@ -84,6 +85,8 @@ namespace InserirColeta
             this.labelDataColeta = new System.Windows.Forms.Label();
             this.textBoxMotivoFalha = new System.Windows.Forms.TextBox();
             this.labelMotivoFalha = new System.Windows.Forms.Label();
+            this.labelCamposObrigatorios = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxEnderecos.SuspendLayout();
             this.groupBoxMaterial.SuspendLayout();
             this.SuspendLayout();
@@ -91,30 +94,30 @@ namespace InserirColeta
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTitulo.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.Location = new System.Drawing.Point(12, 9);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(169, 55);
+            this.labelTitulo.Size = new System.Drawing.Size(122, 40);
             this.labelTitulo.TabIndex = 0;
             this.labelTitulo.Text = "{Titulo}";
             // 
-            // label1
+            // labelSolicitante
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Solicitante [email]";
+            this.labelSolicitante.AutoSize = true;
+            this.labelSolicitante.Location = new System.Drawing.Point(12, 83);
+            this.labelSolicitante.Name = "labelSolicitante";
+            this.labelSolicitante.Size = new System.Drawing.Size(122, 17);
+            this.labelSolicitante.TabIndex = 1;
+            this.labelSolicitante.Text = "Solicitante [email]";
             // 
-            // label2
+            // labelSetor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Setor";
+            this.labelSetor.AutoSize = true;
+            this.labelSetor.Location = new System.Drawing.Point(12, 114);
+            this.labelSetor.Name = "labelSetor";
+            this.labelSetor.Size = new System.Drawing.Size(43, 17);
+            this.labelSetor.TabIndex = 2;
+            this.labelSetor.Text = "Setor";
             // 
             // textBoxSolicitante
             // 
@@ -137,23 +140,23 @@ namespace InserirColeta
             this.textBox_CC_Projeto.Size = new System.Drawing.Size(360, 25);
             this.textBox_CC_Projeto.TabIndex = 2;
             // 
-            // label3
+            // label_CC_Projeto
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "CC / Projeto";
+            this.label_CC_Projeto.AutoSize = true;
+            this.label_CC_Projeto.Location = new System.Drawing.Point(12, 145);
+            this.label_CC_Projeto.Name = "label_CC_Projeto";
+            this.label_CC_Projeto.Size = new System.Drawing.Size(88, 17);
+            this.label_CC_Projeto.TabIndex = 5;
+            this.label_CC_Projeto.Text = "CC / Projeto";
             // 
-            // label4
+            // labelDataNecessesaria
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Necessidade da Coleta";
+            this.labelDataNecessesaria.AutoSize = true;
+            this.labelDataNecessesaria.Location = new System.Drawing.Point(12, 176);
+            this.labelDataNecessesaria.Name = "labelDataNecessesaria";
+            this.labelDataNecessesaria.Size = new System.Drawing.Size(159, 17);
+            this.labelDataNecessesaria.TabIndex = 7;
+            this.labelDataNecessesaria.Text = "Necessidade da Coleta";
             // 
             // dateTimePickerDataNecessesaria
             // 
@@ -179,26 +182,26 @@ namespace InserirColeta
             this.comboBoxPeriodo.TabIndex = 4;
             this.comboBoxPeriodo.Text = "manhã";
             // 
-            // label5
+            // labelPeriodo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(352, 176);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Periodo";
+            this.labelPeriodo.AutoSize = true;
+            this.labelPeriodo.Location = new System.Drawing.Point(346, 176);
+            this.labelPeriodo.Name = "labelPeriodo";
+            this.labelPeriodo.Size = new System.Drawing.Size(58, 17);
+            this.labelPeriodo.TabIndex = 4;
+            this.labelPeriodo.Text = "Periodo";
             // 
             // groupBoxEnderecos
             // 
             this.groupBoxEnderecos.Controls.Add(this.textBoxEnderecoEntrega);
-            this.groupBoxEnderecos.Controls.Add(this.label8);
+            this.groupBoxEnderecos.Controls.Add(this.labelEndereçoEntrega);
             this.groupBoxEnderecos.Controls.Add(this.textBoxEnderecoColeta);
-            this.groupBoxEnderecos.Controls.Add(this.label9);
+            this.groupBoxEnderecos.Controls.Add(this.labelEnderecoColeta);
             this.groupBoxEnderecos.Controls.Add(this.textBoxLocalEntrega);
-            this.groupBoxEnderecos.Controls.Add(this.label7);
+            this.groupBoxEnderecos.Controls.Add(this.labelLocalEntrega);
             this.groupBoxEnderecos.Controls.Add(this.textBoxLocalColeta);
-            this.groupBoxEnderecos.Controls.Add(this.label6);
-            this.groupBoxEnderecos.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxEnderecos.Controls.Add(this.labelLocalColeta);
+            this.groupBoxEnderecos.Font = new System.Drawing.Font("Arial", 14.25F);
             this.groupBoxEnderecos.Location = new System.Drawing.Point(12, 203);
             this.groupBoxEnderecos.Name = "groupBoxEnderecos";
             this.groupBoxEnderecos.Size = new System.Drawing.Size(1062, 152);
@@ -208,90 +211,94 @@ namespace InserirColeta
             // 
             // textBoxEnderecoEntrega
             // 
-            this.textBoxEnderecoEntrega.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEnderecoEntrega.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxEnderecoEntrega.Location = new System.Drawing.Point(690, 59);
             this.textBoxEnderecoEntrega.Multiline = true;
             this.textBoxEnderecoEntrega.Name = "textBoxEnderecoEntrega";
             this.textBoxEnderecoEntrega.Size = new System.Drawing.Size(360, 80);
             this.textBoxEnderecoEntrega.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.textBoxEnderecoEntrega, "Endereço da entrega:\r\nex. \r\nAvenida Osvaldo Berto, 475\r\nDistr. Industrial Alfredo" +
+        " Rela\r\n13255-405 - Itatiba-SP -Brasil\r\n");
             // 
-            // label8
+            // labelEndereçoEntrega
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(540, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Endereço de entrega";
+            this.labelEndereçoEntrega.AutoSize = true;
+            this.labelEndereçoEntrega.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelEndereçoEntrega.Location = new System.Drawing.Point(537, 59);
+            this.labelEndereçoEntrega.Name = "labelEndereçoEntrega";
+            this.labelEndereçoEntrega.Size = new System.Drawing.Size(144, 17);
+            this.labelEndereçoEntrega.TabIndex = 19;
+            this.labelEndereçoEntrega.Text = "Endereço de entrega";
             // 
             // textBoxEnderecoColeta
             // 
-            this.textBoxEnderecoColeta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEnderecoColeta.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxEnderecoColeta.Location = new System.Drawing.Point(165, 59);
             this.textBoxEnderecoColeta.Multiline = true;
             this.textBoxEnderecoColeta.Name = "textBoxEnderecoColeta";
             this.textBoxEnderecoColeta.Size = new System.Drawing.Size(360, 80);
             this.textBoxEnderecoColeta.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBoxEnderecoColeta, "Endereço da coleta:\r\nex. \r\nAvenida Osvaldo Berto, 475\r\nDistr. Industrial Alfredo " +
+        "Rela\r\n13255-405 - Itatiba-SP -Brasil");
             // 
-            // label9
+            // labelEnderecoColeta
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(6, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 17);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Endereço de coleta";
+            this.labelEnderecoColeta.AutoSize = true;
+            this.labelEnderecoColeta.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelEnderecoColeta.Location = new System.Drawing.Point(6, 59);
+            this.labelEnderecoColeta.Name = "labelEnderecoColeta";
+            this.labelEnderecoColeta.Size = new System.Drawing.Size(134, 17);
+            this.labelEnderecoColeta.TabIndex = 5;
+            this.labelEnderecoColeta.Text = "Endereço de coleta";
             // 
             // textBoxLocalEntrega
             // 
-            this.textBoxLocalEntrega.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxLocalEntrega.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxLocalEntrega.Location = new System.Drawing.Point(690, 28);
             this.textBoxLocalEntrega.Name = "textBoxLocalEntrega";
             this.textBoxLocalEntrega.Size = new System.Drawing.Size(360, 25);
             this.textBoxLocalEntrega.TabIndex = 2;
             // 
-            // label7
+            // labelLocalEntrega
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(588, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 17);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Local entrega";
+            this.labelLocalEntrega.AutoSize = true;
+            this.labelLocalEntrega.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelLocalEntrega.Location = new System.Drawing.Point(585, 32);
+            this.labelLocalEntrega.Name = "labelLocalEntrega";
+            this.labelLocalEntrega.Size = new System.Drawing.Size(96, 17);
+            this.labelLocalEntrega.TabIndex = 15;
+            this.labelLocalEntrega.Text = "Local entrega";
             // 
             // textBoxLocalColeta
             // 
-            this.textBoxLocalColeta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxLocalColeta.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxLocalColeta.Location = new System.Drawing.Point(165, 28);
             this.textBoxLocalColeta.Name = "textBoxLocalColeta";
             this.textBoxLocalColeta.Size = new System.Drawing.Size(360, 25);
             this.textBoxLocalColeta.TabIndex = 0;
             // 
-            // label6
+            // labelLocalColeta
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(6, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Local da coleta";
+            this.labelLocalColeta.AutoSize = true;
+            this.labelLocalColeta.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelLocalColeta.Location = new System.Drawing.Point(6, 32);
+            this.labelLocalColeta.Name = "labelLocalColeta";
+            this.labelLocalColeta.Size = new System.Drawing.Size(106, 17);
+            this.labelLocalColeta.TabIndex = 13;
+            this.labelLocalColeta.Text = "Local da coleta";
             // 
             // groupBoxMaterial
             // 
             this.groupBoxMaterial.Controls.Add(this.textBoxQuantidadeVolume);
-            this.groupBoxMaterial.Controls.Add(this.label18);
+            this.groupBoxMaterial.Controls.Add(this.labelQuantidadeVolumes);
             this.groupBoxMaterial.Controls.Add(this.textBoxMaterialPeso);
-            this.groupBoxMaterial.Controls.Add(this.label17);
+            this.groupBoxMaterial.Controls.Add(this.labelMaterialPeso);
             this.groupBoxMaterial.Controls.Add(this.label11);
             this.groupBoxMaterial.Controls.Add(this.textBoxMaterialDimensoes);
-            this.groupBoxMaterial.Controls.Add(this.label10);
+            this.groupBoxMaterial.Controls.Add(this.labelMaterialDimensoes);
             this.groupBoxMaterial.Controls.Add(this.textBoxMaterialDescricao);
-            this.groupBoxMaterial.Controls.Add(this.label13);
-            this.groupBoxMaterial.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxMaterial.Controls.Add(this.labelMaterialDescricao);
+            this.groupBoxMaterial.Font = new System.Drawing.Font("Arial", 14.25F);
             this.groupBoxMaterial.Location = new System.Drawing.Point(12, 361);
             this.groupBoxMaterial.Name = "groupBoxMaterial";
             this.groupBoxMaterial.Size = new System.Drawing.Size(1062, 184);
@@ -301,44 +308,46 @@ namespace InserirColeta
             // 
             // textBoxQuantidadeVolume
             // 
-            this.textBoxQuantidadeVolume.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxQuantidadeVolume.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxQuantidadeVolume.Location = new System.Drawing.Point(165, 148);
             this.textBoxQuantidadeVolume.Name = "textBoxQuantidadeVolume";
             this.textBoxQuantidadeVolume.Size = new System.Drawing.Size(120, 25);
             this.textBoxQuantidadeVolume.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.textBoxQuantidadeVolume, "Somente numeros\r\nex.\r\n1");
             // 
-            // label18
+            // labelQuantidadeVolumes
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(6, 154);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(142, 17);
-            this.label18.TabIndex = 33;
-            this.label18.Text = "Quantidade volumes";
+            this.labelQuantidadeVolumes.AutoSize = true;
+            this.labelQuantidadeVolumes.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelQuantidadeVolumes.Location = new System.Drawing.Point(6, 154);
+            this.labelQuantidadeVolumes.Name = "labelQuantidadeVolumes";
+            this.labelQuantidadeVolumes.Size = new System.Drawing.Size(142, 17);
+            this.labelQuantidadeVolumes.TabIndex = 33;
+            this.labelQuantidadeVolumes.Text = "Quantidade volumes";
             // 
             // textBoxMaterialPeso
             // 
-            this.textBoxMaterialPeso.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMaterialPeso.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxMaterialPeso.Location = new System.Drawing.Point(165, 117);
             this.textBoxMaterialPeso.Name = "textBoxMaterialPeso";
             this.textBoxMaterialPeso.Size = new System.Drawing.Size(120, 25);
             this.textBoxMaterialPeso.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.textBoxMaterialPeso, "Somente numeros\r\nex.\r\n15,5");
             // 
-            // label17
+            // labelMaterialPeso
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(6, 123);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 17);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "Peso [kg]";
+            this.labelMaterialPeso.AutoSize = true;
+            this.labelMaterialPeso.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelMaterialPeso.Location = new System.Drawing.Point(6, 123);
+            this.labelMaterialPeso.Name = "labelMaterialPeso";
+            this.labelMaterialPeso.Size = new System.Drawing.Size(69, 17);
+            this.labelMaterialPeso.TabIndex = 31;
+            this.labelMaterialPeso.Text = "Peso [kg]";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Arial", 11.25F);
             this.label11.Location = new System.Drawing.Point(192, 66);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 17);
@@ -347,39 +356,40 @@ namespace InserirColeta
             // 
             // textBoxMaterialDimensoes
             // 
-            this.textBoxMaterialDimensoes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMaterialDimensoes.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxMaterialDimensoes.Location = new System.Drawing.Point(165, 86);
             this.textBoxMaterialDimensoes.Name = "textBoxMaterialDimensoes";
             this.textBoxMaterialDimensoes.Size = new System.Drawing.Size(119, 25);
             this.textBoxMaterialDimensoes.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBoxMaterialDimensoes, "ex.\r\n1000x1000x1000");
             // 
-            // label10
+            // labelMaterialDimensoes
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(6, 92);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 17);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Dimensões [mm]";
+            this.labelMaterialDimensoes.AutoSize = true;
+            this.labelMaterialDimensoes.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelMaterialDimensoes.Location = new System.Drawing.Point(6, 92);
+            this.labelMaterialDimensoes.Name = "labelMaterialDimensoes";
+            this.labelMaterialDimensoes.Size = new System.Drawing.Size(121, 17);
+            this.labelMaterialDimensoes.TabIndex = 22;
+            this.labelMaterialDimensoes.Text = "Dimensões [mm]";
             // 
             // textBoxMaterialDescricao
             // 
-            this.textBoxMaterialDescricao.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMaterialDescricao.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxMaterialDescricao.Location = new System.Drawing.Point(165, 28);
             this.textBoxMaterialDescricao.Name = "textBoxMaterialDescricao";
             this.textBoxMaterialDescricao.Size = new System.Drawing.Size(885, 25);
             this.textBoxMaterialDescricao.TabIndex = 0;
             // 
-            // label13
+            // labelMaterialDescricao
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(6, 31);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 17);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Descrição";
+            this.labelMaterialDescricao.AutoSize = true;
+            this.labelMaterialDescricao.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.labelMaterialDescricao.Location = new System.Drawing.Point(6, 31);
+            this.labelMaterialDescricao.Name = "labelMaterialDescricao";
+            this.labelMaterialDescricao.Size = new System.Drawing.Size(75, 17);
+            this.labelMaterialDescricao.TabIndex = 13;
+            this.labelMaterialDescricao.Text = "Descrição";
             // 
             // textBoxNotaFiscal
             // 
@@ -387,15 +397,16 @@ namespace InserirColeta
             this.textBoxNotaFiscal.Name = "textBoxNotaFiscal";
             this.textBoxNotaFiscal.Size = new System.Drawing.Size(120, 25);
             this.textBoxNotaFiscal.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.textBoxNotaFiscal, "ex.\r\nNF123.456");
             // 
-            // label19
+            // labelNotaFiscal
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(11, 555);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(103, 17);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "Numero da NF";
+            this.labelNotaFiscal.AutoSize = true;
+            this.labelNotaFiscal.Location = new System.Drawing.Point(11, 555);
+            this.labelNotaFiscal.Name = "labelNotaFiscal";
+            this.labelNotaFiscal.Size = new System.Drawing.Size(103, 17);
+            this.labelNotaFiscal.TabIndex = 22;
+            this.labelNotaFiscal.Text = "Numero da NF";
             // 
             // textBoxValorNotaFiscal
             // 
@@ -403,28 +414,29 @@ namespace InserirColeta
             this.textBoxValorNotaFiscal.Name = "textBoxValorNotaFiscal";
             this.textBoxValorNotaFiscal.Size = new System.Drawing.Size(120, 25);
             this.textBoxValorNotaFiscal.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.textBoxValorNotaFiscal, "Somente numeros\r\nex.\r\n150,00");
             // 
-            // label20
+            // labelValorNotaFiscal
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(11, 586);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(94, 17);
-            this.label20.TabIndex = 24;
-            this.label20.Text = "Valor NF [R$]";
+            this.labelValorNotaFiscal.AutoSize = true;
+            this.labelValorNotaFiscal.Location = new System.Drawing.Point(11, 586);
+            this.labelValorNotaFiscal.Name = "labelValorNotaFiscal";
+            this.labelValorNotaFiscal.Size = new System.Drawing.Size(94, 17);
+            this.labelValorNotaFiscal.TabIndex = 24;
+            this.labelValorNotaFiscal.Text = "Valor NF [R$]";
             // 
-            // label21
+            // labelObs
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(11, 617);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 17);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "Obs.";
+            this.labelObs.AutoSize = true;
+            this.labelObs.Location = new System.Drawing.Point(11, 617);
+            this.labelObs.Name = "labelObs";
+            this.labelObs.Size = new System.Drawing.Size(40, 17);
+            this.labelObs.TabIndex = 26;
+            this.labelObs.Text = "Obs.";
             // 
             // textBoxObs
             // 
-            this.textBoxObs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxObs.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxObs.Location = new System.Drawing.Point(176, 617);
             this.textBoxObs.Multiline = true;
             this.textBoxObs.Name = "textBoxObs";
@@ -519,7 +531,7 @@ namespace InserirColeta
             // 
             // textBoxTransportadora
             // 
-            this.textBoxTransportadora.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxTransportadora.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxTransportadora.Location = new System.Drawing.Point(702, 579);
             this.textBoxTransportadora.Name = "textBoxTransportadora";
             this.textBoxTransportadora.Size = new System.Drawing.Size(360, 25);
@@ -528,7 +540,7 @@ namespace InserirColeta
             // labelTransportadora
             // 
             this.labelTransportadora.AutoSize = true;
-            this.labelTransportadora.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTransportadora.Font = new System.Drawing.Font("Arial", 11.25F);
             this.labelTransportadora.Location = new System.Drawing.Point(589, 582);
             this.labelTransportadora.Name = "labelTransportadora";
             this.labelTransportadora.Size = new System.Drawing.Size(107, 17);
@@ -572,7 +584,7 @@ namespace InserirColeta
             // 
             // textBoxMotivoFalha
             // 
-            this.textBoxMotivoFalha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMotivoFalha.Font = new System.Drawing.Font("Arial", 11.25F);
             this.textBoxMotivoFalha.Location = new System.Drawing.Point(702, 672);
             this.textBoxMotivoFalha.Name = "textBoxMotivoFalha";
             this.textBoxMotivoFalha.Size = new System.Drawing.Size(360, 25);
@@ -581,18 +593,36 @@ namespace InserirColeta
             // labelMotivoFalha
             // 
             this.labelMotivoFalha.AutoSize = true;
-            this.labelMotivoFalha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMotivoFalha.Font = new System.Drawing.Font("Arial", 11.25F);
             this.labelMotivoFalha.Location = new System.Drawing.Point(612, 676);
             this.labelMotivoFalha.Name = "labelMotivoFalha";
             this.labelMotivoFalha.Size = new System.Drawing.Size(84, 17);
             this.labelMotivoFalha.TabIndex = 40;
             this.labelMotivoFalha.Text = "Motivo falha";
             // 
+            // labelCamposObrigatorios
+            // 
+            this.labelCamposObrigatorios.AutoSize = true;
+            this.labelCamposObrigatorios.BackColor = System.Drawing.SystemColors.Info;
+            this.labelCamposObrigatorios.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCamposObrigatorios.ForeColor = System.Drawing.Color.Red;
+            this.labelCamposObrigatorios.Location = new System.Drawing.Point(12, 55);
+            this.labelCamposObrigatorios.Name = "labelCamposObrigatorios";
+            this.labelCamposObrigatorios.Size = new System.Drawing.Size(324, 15);
+            this.labelCamposObrigatorios.TabIndex = 41;
+            this.labelCamposObrigatorios.Text = "Todos campos marcados com (*) devem ser preenchidos";
+            this.labelCamposObrigatorios.Visible = false;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Active = false;
+            // 
             // FormInserirColeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 756);
+            this.Controls.Add(this.labelCamposObrigatorios);
             this.Controls.Add(this.textBoxMotivoFalha);
             this.Controls.Add(this.labelMotivoFalha);
             this.Controls.Add(this.dateTimePickerDataColeta);
@@ -611,25 +641,25 @@ namespace InserirColeta
             this.Controls.Add(this.labelId);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.textBoxObs);
-            this.Controls.Add(this.label21);
+            this.Controls.Add(this.labelObs);
             this.Controls.Add(this.textBoxValorNotaFiscal);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.labelValorNotaFiscal);
             this.Controls.Add(this.textBoxNotaFiscal);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.labelNotaFiscal);
             this.Controls.Add(this.groupBoxMaterial);
             this.Controls.Add(this.groupBoxEnderecos);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelPeriodo);
             this.Controls.Add(this.comboBoxPeriodo);
             this.Controls.Add(this.dateTimePickerDataNecessesaria);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelDataNecessesaria);
             this.Controls.Add(this.textBox_CC_Projeto);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_CC_Projeto);
             this.Controls.Add(this.textBoxSetor);
             this.Controls.Add(this.textBoxSolicitante);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelSetor);
+            this.Controls.Add(this.labelSolicitante);
             this.Controls.Add(this.labelTitulo);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Arial", 11.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInserirColeta";
             this.Text = "HSA Coleta";
@@ -646,40 +676,40 @@ namespace InserirColeta
         #endregion
 
         private Label labelTitulo;
-        private Label label1;
-        private Label label2;
+        private Label labelSolicitante;
+        private Label labelSetor;
         private TextBox textBoxSolicitante;
         private TextBox textBoxSetor;
         private TextBox textBox_CC_Projeto;
-        private Label label3;
-        private Label label4;
+        private Label label_CC_Projeto;
+        private Label labelDataNecessesaria;
         private DateTimePicker dateTimePickerDataNecessesaria;
         private ComboBox comboBoxPeriodo;
-        private Label label5;
+        private Label labelPeriodo;
         private GroupBox groupBoxEnderecos;
         private TextBox textBoxEnderecoEntrega;
-        private Label label8;
+        private Label labelEndereçoEntrega;
         private TextBox textBoxEnderecoColeta;
-        private Label label9;
+        private Label labelEnderecoColeta;
         private TextBox textBoxLocalEntrega;
-        private Label label7;
+        private Label labelLocalEntrega;
         private TextBox textBoxLocalColeta;
-        private Label label6;
+        private Label labelLocalColeta;
         private GroupBox groupBoxMaterial;
         private TextBox textBoxMaterialDescricao;
-        private Label label13;
+        private Label labelMaterialDescricao;
         private TextBox textBoxQuantidadeVolume;
-        private Label label18;
+        private Label labelQuantidadeVolumes;
         private TextBox textBoxMaterialPeso;
-        private Label label17;
+        private Label labelMaterialPeso;
         private Label label11;
         private TextBox textBoxMaterialDimensoes;
-        private Label label10;
+        private Label labelMaterialDimensoes;
         private TextBox textBoxNotaFiscal;
-        private Label label19;
+        private Label labelNotaFiscal;
         private TextBox textBoxValorNotaFiscal;
-        private Label label20;
-        private Label label21;
+        private Label labelValorNotaFiscal;
+        private Label labelObs;
         private TextBox textBoxObs;
         private TextBox textBoxId;
         private Label labelId;
@@ -698,5 +728,7 @@ namespace InserirColeta
         private Label labelDataColeta;
         private TextBox textBoxMotivoFalha;
         private Label labelMotivoFalha;
+        private Label labelCamposObrigatorios;
+        private ToolTip toolTip1;
     }
 }
