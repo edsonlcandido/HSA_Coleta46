@@ -27,7 +27,8 @@ namespace AdministrarColeta
             try
             {
                 UsuarioModel usuario = (UsuarioModel)usuariosAtivos.First(u => u.nome.ToLower().Contains(userName.ToLower()));
-                Application.Run(new FormAdministrarColeta(usuario));
+                //Application.Run(new FormAdministrarColeta(usuario));
+                Application.Run(new FormUsuarios());
             }
             catch (InvalidOperationException)
             {

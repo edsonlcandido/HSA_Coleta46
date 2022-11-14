@@ -1,20 +1,20 @@
-﻿using Common.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Data.Entity.Core;
 
 namespace Common.Repositories
 {
-    internal class UsuarioContext : DbContext, IUsuarioRepository
+    public class UsuarioContext
     {
-        public DbSet<UsuarioModel> Usuarios { get; set; }
-        public IEnumerable<UsuarioModel> usuariosAtivos()
+        private readonly DbContext _context;
+        public UsuarioContext()
         {
-            throw new NotImplementedException();
+            SQLiteConnection sQLiteConnection = new SQLiteConnection("Data Source=HSA_Coleta.db;");
+            _context= new DbContext(sQLiteConnection,false);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace HSA_Coleta
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministrarColeta));
             this.dataGridViewListarColetas = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -38,6 +39,8 @@ namespace HSA_Coleta
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarParaOExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonIncluirColeta = new System.Windows.Forms.Button();
             this.buttonEditarColeta = new System.Windows.Forms.Button();
@@ -46,11 +49,13 @@ namespace HSA_Coleta
             this.buttonListarTodasColetas = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coletaModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListarColetas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coletaModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewListarColetas
@@ -111,6 +116,21 @@ namespace HSA_Coleta
             this.exportarParaOExcelToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.exportarParaOExcelToolStripMenuItem.Text = "Exportar todas coletas para arquivo excel";
             this.exportarParaOExcelToolStripMenuItem.Click += new System.EventHandler(this.exportarParaOExcelToolStripMenuItem_Click);
+            // 
+            // administrarToolStripMenuItem
+            // 
+            this.administrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosToolStripMenuItem});
+            this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.administrarToolStripMenuItem.Text = "Administrar";
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // labelTitulo
             // 
@@ -198,20 +218,13 @@ namespace HSA_Coleta
             this.comboBoxStatus.Text = "aguardando";
             this.comboBoxStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatus_SelectedIndexChanged);
             // 
-            // administrarToolStripMenuItem
+            // usuarioModelBindingSource
             // 
-            this.administrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem});
-            this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.administrarToolStripMenuItem.Text = "Administrar";
+            this.usuarioModelBindingSource.DataSource = typeof(Common.Models.UsuarioModel);
             // 
-            // usuariosToolStripMenuItem
+            // coletaModelBindingSource
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.coletaModelBindingSource.DataSource = typeof(Common.Models.ColetaModel);
             // 
             // FormAdministrarColeta
             // 
@@ -237,6 +250,8 @@ namespace HSA_Coleta
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coletaModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +275,7 @@ namespace HSA_Coleta
         private ComboBox comboBoxStatus;
         private ToolStripMenuItem administrarToolStripMenuItem;
         private ToolStripMenuItem usuariosToolStripMenuItem;
+        private BindingSource coletaModelBindingSource;
+        private BindingSource usuarioModelBindingSource;
     }
 }
