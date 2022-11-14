@@ -190,5 +190,10 @@ namespace HSA_Coleta
             }
 
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 } 

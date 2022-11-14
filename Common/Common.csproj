@@ -73,6 +73,7 @@
     <Compile Include="Repositories\ColetaRepository.cs" />
     <Compile Include="Repositories\IColetaRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Repositories\UsuarioContext.cs" />
     <Compile Include="Repositories\UsuarioRepositoryStatic.cs" />
     <Compile Include="Repositories\UsuarioRepositoryTextDb.cs" />
     <Compile Include="Views\IColetaAdministrarView.cs" />
