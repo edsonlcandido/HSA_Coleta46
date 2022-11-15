@@ -14,7 +14,7 @@ namespace Common.Repositories
             List<UsuarioModel> usuarios = new List<UsuarioModel>();
             foreach (string user in System.IO.File.ReadLines(@"users.db"))
             {
-                usuarios.Add(new UsuarioModel() { ativo = true, nome = user });
+                usuarios.Add(new UsuarioModel() { admin = true, nome = user });
             }
             return usuarios;
         }

@@ -22,8 +22,8 @@ namespace Common.Models
         [DisplayName("Nome")]
         [Column("nome")]
         public string nome { get; set; }
-        [DisplayName("Usuário ativo")]
-        [Column("ativo")]
-        public bool ativo { get; set; }
+        [DisplayName("Administrador")]
+        [Column("admin")]
+        public bool admin { get; set; }
     }
 }

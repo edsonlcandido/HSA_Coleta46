@@ -13,17 +13,24 @@ namespace Common.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
+        private readonly Context db;
         public UsuarioRepository() 
-        {            
+        {        
+            db = new Context();
         }
         public IEnumerable<UsuarioModel> usuariosAtivos()
         {
-            List<UsuarioModel> usuariosAtivos = new List<UsuarioModel>();
+            //List<UsuarioModel> usuariosAtivos = new List<UsuarioModel>();
 
             //var data = usuariosContext.ToList();
             //usuariosAtivos.AddRange(data);
 
-            return usuariosAtivos;
+            //foreach (var usuario in db.usuario.ToList())
+            //{
+
+            //}
+
+            return db.usuario.ToList();
             //throw new NotImplementedException();
         }
     }

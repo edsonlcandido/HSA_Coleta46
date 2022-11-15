@@ -23,7 +23,7 @@ namespace HSA_Coleta
         {
             try
             {
-                if (!usuario.ativo)
+                if (!usuario.admin)
                 {
                     throw new InvalidOperationException();
                 }

@@ -24,9 +24,9 @@ namespace AdministrarColeta
 
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
-            //this.usuarioContext = new UsuarioRepository();
+            this.usuarioContext = new UsuarioRepository();
             //_bindingSource.DataSource = usuarioContext.usuariosAtivos();
-            //dataGridView1.DataSource= usuarioContext.usuariosAtivos();
+            dataGridView1.DataSource= usuarioContext.usuariosAtivos();
         }
     }
 }

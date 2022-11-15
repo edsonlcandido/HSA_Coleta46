@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Common.Models
 {
+    [Table("coleta")]
     public class ColetaModel
     {
         [DisplayName("#")]
         [ReadOnly(true)]
+        [Column("id")]
         public int id { get; set; }
         [DisplayName("Data da inclusão")]
         [Required(ErrorMessage ="Data é requerida")]
@@ -19,7 +22,8 @@ namespace Common.Models
         [ReadOnly(true)]
         public DateTime dataInclusao { get; set; }
         [DisplayName("Solicitante email:")]
-        [Required(ErrorMessage = "Solicitante é requerido")]
+        [Required(ErrorMessage = "Email do solicitante é requerido")]
+        [Column("solicitante")]
         public string solicitante { get; set; }
         [DisplayName("Setor")]
         [Required(ErrorMessage = "Setor é requerido")]

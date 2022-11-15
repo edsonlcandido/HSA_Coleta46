@@ -13,8 +13,8 @@ namespace Common.Repositories
         {
             List<UsuarioModel> usuarios = new List<UsuarioModel>()
             {
-                new UsuarioModel() { id = 1, nome = "edson", ativo = true },
-                new UsuarioModel() {id=2, nome ="candided", ativo = true }
+                new UsuarioModel() { id = 1, nome = "edson", admin = true },
+                new UsuarioModel() {id=2, nome ="candided", admin = true }
             };
             return usuarios;
         }
