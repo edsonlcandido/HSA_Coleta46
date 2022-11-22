@@ -521,6 +521,7 @@ namespace InserirColeta
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
             "aguardando",
+            "em andamento",
             "concluído",
             "finalizada - sem coleta"});
             this.comboBoxStatus.Location = new System.Drawing.Point(942, 641);
