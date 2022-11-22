@@ -91,6 +91,7 @@ namespace InserirColeta
             this.labelMaterialPeso_Alert = new System.Windows.Forms.Label();
             this.labellabelQuantidadeVolumes_Alert = new System.Windows.Forms.Label();
             this.labelValorNotaFiscal_Alert = new System.Windows.Forms.Label();
+            this.labelNotaFiscal_Alert = new System.Windows.Forms.Label();
             this.groupBoxEnderecos.SuspendLayout();
             this.groupBoxMaterial.SuspendLayout();
             this.SuspendLayout();
@@ -410,6 +411,8 @@ namespace InserirColeta
             this.textBoxNotaFiscal.Size = new System.Drawing.Size(120, 25);
             this.textBoxNotaFiscal.TabIndex = 7;
             this.toolTip1.SetToolTip(this.textBoxNotaFiscal, "ex.\r\nNF123.456");
+            this.textBoxNotaFiscal.Enter += new System.EventHandler(this.textBoxNotaFiscal_Enter);
+            this.textBoxNotaFiscal.Leave += new System.EventHandler(this.textBoxNotaFiscal_Leave);
             // 
             // labelNotaFiscal
             // 
@@ -678,18 +681,32 @@ namespace InserirColeta
             this.labelValorNotaFiscal_Alert.BackColor = System.Drawing.SystemColors.Info;
             this.labelValorNotaFiscal_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelValorNotaFiscal_Alert.ForeColor = System.Drawing.Color.Red;
-            this.labelValorNotaFiscal_Alert.Location = new System.Drawing.Point(310, 579);
+            this.labelValorNotaFiscal_Alert.Location = new System.Drawing.Point(306, 579);
             this.labelValorNotaFiscal_Alert.Name = "labelValorNotaFiscal_Alert";
-            this.labelValorNotaFiscal_Alert.Size = new System.Drawing.Size(169, 30);
+            this.labelValorNotaFiscal_Alert.Size = new System.Drawing.Size(113, 30);
             this.labelValorNotaFiscal_Alert.TabIndex = 45;
-            this.labelValorNotaFiscal_Alert.Text = "Evite usar somente números.\r\nEx. NF123.456";
+            this.labelValorNotaFiscal_Alert.Text = "Somente números.\r\nEx. 15,5";
             this.labelValorNotaFiscal_Alert.Visible = false;
+            // 
+            // labelNotaFiscal_Alert
+            // 
+            this.labelNotaFiscal_Alert.AutoSize = true;
+            this.labelNotaFiscal_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labelNotaFiscal_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotaFiscal_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labelNotaFiscal_Alert.Location = new System.Drawing.Point(306, 548);
+            this.labelNotaFiscal_Alert.Name = "labelNotaFiscal_Alert";
+            this.labelNotaFiscal_Alert.Size = new System.Drawing.Size(175, 30);
+            this.labelNotaFiscal_Alert.TabIndex = 46;
+            this.labelNotaFiscal_Alert.Text = "Evite usar somente números.\r\nPreencher conf. ex. NF123.456";
+            this.labelNotaFiscal_Alert.Visible = false;
             // 
             // FormInserirColeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 756);
+            this.Controls.Add(this.labelNotaFiscal_Alert);
             this.Controls.Add(this.labelValorNotaFiscal_Alert);
             this.Controls.Add(this.label_CC_Projeto_Alert);
             this.Controls.Add(this.labelCamposObrigatorios);
@@ -804,5 +821,6 @@ namespace InserirColeta
         private Label labelMaterialPeso_Alert;
         private Label labellabelQuantidadeVolumes_Alert;
         private Label labelValorNotaFiscal_Alert;
+        private Label labelNotaFiscal_Alert;
     }
 }

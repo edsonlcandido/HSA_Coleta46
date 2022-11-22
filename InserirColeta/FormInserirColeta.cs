@@ -455,5 +455,15 @@ namespace InserirColeta
         {
             labelValorNotaFiscal_Alert.Visible = false;
         }
+
+        private void textBoxNotaFiscal_Enter(object sender, EventArgs e)
+        {
+            labelNotaFiscal_Alert.Visible = true;
+        }
+
+        private void textBoxNotaFiscal_Leave(object sender, EventArgs e)
+        {
+            labelNotaFiscal_Alert.Visible = false;
+        }
     }
 }
