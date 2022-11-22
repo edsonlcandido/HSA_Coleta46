@@ -87,6 +87,10 @@ namespace InserirColeta
             this.labelMotivoFalha = new System.Windows.Forms.Label();
             this.labelCamposObrigatorios = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label_CC_Projeto_Alert = new System.Windows.Forms.Label();
+            this.labelMaterialPeso_Alert = new System.Windows.Forms.Label();
+            this.labellabelQuantidadeVolumes_Alert = new System.Windows.Forms.Label();
+            this.labelValorNotaFiscal_Alert = new System.Windows.Forms.Label();
             this.groupBoxEnderecos.SuspendLayout();
             this.groupBoxMaterial.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +143,8 @@ namespace InserirColeta
             this.textBox_CC_Projeto.Name = "textBox_CC_Projeto";
             this.textBox_CC_Projeto.Size = new System.Drawing.Size(360, 25);
             this.textBox_CC_Projeto.TabIndex = 2;
+            this.textBox_CC_Projeto.Enter += new System.EventHandler(this.textBox_CC_Projeto_Enter);
+            this.textBox_CC_Projeto.Leave += new System.EventHandler(this.textBox_CC_Projeto_Leave);
             // 
             // label_CC_Projeto
             // 
@@ -289,6 +295,8 @@ namespace InserirColeta
             // 
             // groupBoxMaterial
             // 
+            this.groupBoxMaterial.Controls.Add(this.labellabelQuantidadeVolumes_Alert);
+            this.groupBoxMaterial.Controls.Add(this.labelMaterialPeso_Alert);
             this.groupBoxMaterial.Controls.Add(this.textBoxQuantidadeVolume);
             this.groupBoxMaterial.Controls.Add(this.labelQuantidadeVolumes);
             this.groupBoxMaterial.Controls.Add(this.textBoxMaterialPeso);
@@ -313,7 +321,9 @@ namespace InserirColeta
             this.textBoxQuantidadeVolume.Name = "textBoxQuantidadeVolume";
             this.textBoxQuantidadeVolume.Size = new System.Drawing.Size(120, 25);
             this.textBoxQuantidadeVolume.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.textBoxQuantidadeVolume, "Somente numeros\r\nex.\r\n1");
+            this.toolTip1.SetToolTip(this.textBoxQuantidadeVolume, "Somente numeros inteiros\r\nex. 1");
+            this.textBoxQuantidadeVolume.Enter += new System.EventHandler(this.textBoxQuantidadeVolume_Enter);
+            this.textBoxQuantidadeVolume.Leave += new System.EventHandler(this.textBoxQuantidadeVolume_Leave);
             // 
             // labelQuantidadeVolumes
             // 
@@ -333,6 +343,8 @@ namespace InserirColeta
             this.textBoxMaterialPeso.Size = new System.Drawing.Size(120, 25);
             this.textBoxMaterialPeso.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBoxMaterialPeso, "Somente numeros\r\nex.\r\n15,5");
+            this.textBoxMaterialPeso.Enter += new System.EventHandler(this.textBoxMaterialPeso_Enter);
+            this.textBoxMaterialPeso.Leave += new System.EventHandler(this.textBoxMaterialPeso_Leave);
             // 
             // labelMaterialPeso
             // 
@@ -415,6 +427,8 @@ namespace InserirColeta
             this.textBoxValorNotaFiscal.Size = new System.Drawing.Size(120, 25);
             this.textBoxValorNotaFiscal.TabIndex = 8;
             this.toolTip1.SetToolTip(this.textBoxValorNotaFiscal, "Somente numeros\r\nex.\r\n150,00");
+            this.textBoxValorNotaFiscal.Enter += new System.EventHandler(this.textBoxValorNotaFiscal_Enter);
+            this.textBoxValorNotaFiscal.Leave += new System.EventHandler(this.textBoxValorNotaFiscal_Leave);
             // 
             // labelValorNotaFiscal
             // 
@@ -618,11 +632,66 @@ namespace InserirColeta
             // 
             this.toolTip1.Active = false;
             // 
+            // label_CC_Projeto_Alert
+            // 
+            this.label_CC_Projeto_Alert.AutoSize = true;
+            this.label_CC_Projeto_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.label_CC_Projeto_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CC_Projeto_Alert.ForeColor = System.Drawing.Color.Red;
+            this.label_CC_Projeto_Alert.Location = new System.Drawing.Point(543, 138);
+            this.label_CC_Projeto_Alert.Name = "label_CC_Projeto_Alert";
+            this.label_CC_Projeto_Alert.Size = new System.Drawing.Size(278, 30);
+            this.label_CC_Projeto_Alert.TabIndex = 42;
+            this.label_CC_Projeto_Alert.Text = "Não usar somente números.\r\nPreencher conf. ex. CC4000 ou NB0101 /  AF2820";
+            this.label_CC_Projeto_Alert.Visible = false;
+            // 
+            // labelMaterialPeso_Alert
+            // 
+            this.labelMaterialPeso_Alert.AutoSize = true;
+            this.labelMaterialPeso_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labelMaterialPeso_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaterialPeso_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labelMaterialPeso_Alert.Location = new System.Drawing.Point(294, 114);
+            this.labelMaterialPeso_Alert.Name = "labelMaterialPeso_Alert";
+            this.labelMaterialPeso_Alert.Size = new System.Drawing.Size(113, 30);
+            this.labelMaterialPeso_Alert.TabIndex = 43;
+            this.labelMaterialPeso_Alert.Text = "Somente números.\r\nEx. 15,5";
+            this.labelMaterialPeso_Alert.Visible = false;
+            // 
+            // labellabelQuantidadeVolumes_Alert
+            // 
+            this.labellabelQuantidadeVolumes_Alert.AutoSize = true;
+            this.labellabelQuantidadeVolumes_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labellabelQuantidadeVolumes_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellabelQuantidadeVolumes_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labellabelQuantidadeVolumes_Alert.Location = new System.Drawing.Point(294, 145);
+            this.labellabelQuantidadeVolumes_Alert.Name = "labellabelQuantidadeVolumes_Alert";
+            this.labellabelQuantidadeVolumes_Alert.Size = new System.Drawing.Size(154, 30);
+            this.labellabelQuantidadeVolumes_Alert.TabIndex = 44;
+            this.labellabelQuantidadeVolumes_Alert.Text = "Somente numeros inteiros\r\nex. 1";
+            this.labellabelQuantidadeVolumes_Alert.Visible = false;
+            this.labellabelQuantidadeVolumes_Alert.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // labelValorNotaFiscal_Alert
+            // 
+            this.labelValorNotaFiscal_Alert.AutoSize = true;
+            this.labelValorNotaFiscal_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labelValorNotaFiscal_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValorNotaFiscal_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labelValorNotaFiscal_Alert.Location = new System.Drawing.Point(310, 579);
+            this.labelValorNotaFiscal_Alert.Name = "labelValorNotaFiscal_Alert";
+            this.labelValorNotaFiscal_Alert.Size = new System.Drawing.Size(169, 30);
+            this.labelValorNotaFiscal_Alert.TabIndex = 45;
+            this.labelValorNotaFiscal_Alert.Text = "Evite usar somente números.\r\nEx. NF123.456";
+            this.labelValorNotaFiscal_Alert.Visible = false;
+            // 
             // FormInserirColeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 756);
+            this.Controls.Add(this.labelValorNotaFiscal_Alert);
+            this.Controls.Add(this.label_CC_Projeto_Alert);
             this.Controls.Add(this.labelCamposObrigatorios);
             this.Controls.Add(this.textBoxMotivoFalha);
             this.Controls.Add(this.labelMotivoFalha);
@@ -731,5 +800,9 @@ namespace InserirColeta
         private Label labelMotivoFalha;
         private Label labelCamposObrigatorios;
         private ToolTip toolTip1;
+        private Label label_CC_Projeto_Alert;
+        private Label labelMaterialPeso_Alert;
+        private Label labellabelQuantidadeVolumes_Alert;
+        private Label labelValorNotaFiscal_Alert;
     }
 }
