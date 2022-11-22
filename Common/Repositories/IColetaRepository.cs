@@ -15,8 +15,8 @@ namespace Common.Repositories
         ColetaModel obterPeloId(int id);
         IEnumerable<ColetaModel> listar();
         IEnumerable<ColetaModel> listarTodasAguardando();
-
         IEnumerable<ColetaModel> filtrarPeloStatus(string status);
+        IEnumerable<ColetaModel> listarTodasAguardando_EmAndamento();
 
     }
 }

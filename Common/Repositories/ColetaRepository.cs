@@ -245,6 +245,51 @@ namespace Common.Repositories
             return filtrarPeloStatus("aguardando");
         }
 
+        public IEnumerable<ColetaModel> listarTodasAguardando_EmAndamento()
+        {
+            List<ColetaModel> coletasAguardandoEmAndamento = new List<ColetaModel>();
+            SQLiteConnection connection = new SQLiteConnection(CONNECTION_STRING);
+            SQLiteCommand command = connection.CreateCommand();
+            command.CommandText = $@"SELECT id,
+                                           dataInclusao,
+                                           solicitante,
+                                           setor,
+                                           CC_Projeto,
+                                           dataNecessaria,
+                                           periodoColeta,
+                                           localColeta,
+                                           enderecoColeta,
+                                           localEntrega,
+                                           enderecoEntrega,
+                                           materialDescricao,
+                                           materialDimensoes,
+                                           materialPeso,
+                                           quantidadeVolume,
+                                           obs,
+                                           notaFiscal,
+                                           valorNotaFiscal,
+                                           transportadora,
+                                           valorFrete,
+                                           dataColeta,
+                                           status,
+                                           motivoFalha
+                                      FROM coleta
+                                     WHERE status LIKE 'aguardando'
+                                        OR status LIKE 'em andamento'
+                                     ORDER BY dataNecessaria ASC;";
+            connection.Open();
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    ColetaModel coletaModel = readerToColetaModel(reader);
+                    coletasAguardandoEmAndamento.Add(coletaModel);
+                }
+            }
+            connection.Close();
+            return coletasAguardandoEmAndamento;
+        }
+
         public ColetaModel obterPeloId(int id)
         {
             SQLiteConnection connection = new SQLiteConnection(CONNECTION_STRING);

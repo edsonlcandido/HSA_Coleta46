@@ -57,7 +57,16 @@ namespace HSA_Coleta
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cb = (ComboBox)sender;
-            _listaColetas = _coletaRepository.filtrarPeloStatus(cb.Text);
+
+            switch (cb.Text)
+            {
+                case "aguardando + em andamento":
+                    _listaColetas = _coletaRepository.listarTodasAguardando_EmAndamento();
+                    break;
+                default:
+                    _listaColetas = _coletaRepository.filtrarPeloStatus(cb.Text);
+                    break;
+            }            
             updateBidingDataSource();
         }
 
