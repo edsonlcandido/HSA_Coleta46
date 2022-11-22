@@ -410,5 +410,60 @@ namespace InserirColeta
                 throw;
             }
         }
+
+        private void textBox_CC_Projeto_Enter(object sender, EventArgs e)
+        {
+            label_CC_Projeto_Alert.Visible = true;
+        }
+
+        private void textBox_CC_Projeto_Leave(object sender, EventArgs e)
+        {
+            label_CC_Projeto_Alert.Visible = false;
+        }
+
+        private void textBoxMaterialPeso_Enter(object sender, EventArgs e)
+        {
+            labelMaterialPeso_Alert.Visible = true;
+        }
+
+        private void textBoxMaterialPeso_Leave(object sender, EventArgs e)
+        {
+            labelMaterialPeso_Alert.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxQuantidadeVolume_Enter(object sender, EventArgs e)
+        {
+            labellabelQuantidadeVolumes_Alert.Visible = true;
+        }
+
+        private void textBoxQuantidadeVolume_Leave(object sender, EventArgs e)
+        {
+            labellabelQuantidadeVolumes_Alert.Visible = false;
+        }
+
+        private void textBoxValorNotaFiscal_Enter(object sender, EventArgs e)
+        {
+            labelValorNotaFiscal_Alert.Visible = true;
+        }
+
+        private void textBoxValorNotaFiscal_Leave(object sender, EventArgs e)
+        {
+            labelValorNotaFiscal_Alert.Visible = false;
+        }
+
+        private void textBoxNotaFiscal_Enter(object sender, EventArgs e)
+        {
+            labelNotaFiscal_Alert.Visible = true;
+        }
+
+        private void textBoxNotaFiscal_Leave(object sender, EventArgs e)
+        {
+            labelNotaFiscal_Alert.Visible = false;
+        }
     }
 }
