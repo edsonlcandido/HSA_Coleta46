@@ -90,7 +90,7 @@ namespace HSA_Coleta
             coletaPresenter.visualizando = false;
             FormInserirColeta form = new FormInserirColeta(coletaPresenter, coleta);
             form.ShowDialog();
-            _listaColetas = _coletaRepository.listarTodasAguardando();
+            comboBoxStatus_SelectedIndexChanged(this.comboBoxStatus, e);
             updateBidingDataSource();
         }
 
@@ -102,7 +102,7 @@ namespace HSA_Coleta
             coletaPresenter.visualizando = false;
             FormInserirColeta form = new FormInserirColeta(coletaPresenter);
             form.ShowDialog();
-            _listaColetas = _coletaRepository.listarTodasAguardando();
+            comboBoxStatus_SelectedIndexChanged(this.comboBoxStatus, e);
             updateBidingDataSource();
         }
 
