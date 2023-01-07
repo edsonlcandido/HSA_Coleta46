@@ -53,6 +53,8 @@ namespace InserirColeta
             this.textBoxLocalColeta = new System.Windows.Forms.TextBox();
             this.labelLocalColeta = new System.Windows.Forms.Label();
             this.groupBoxMaterial = new System.Windows.Forms.GroupBox();
+            this.labellabelQuantidadeVolumes_Alert = new System.Windows.Forms.Label();
+            this.labelMaterialPeso_Alert = new System.Windows.Forms.Label();
             this.textBoxQuantidadeVolume = new System.Windows.Forms.TextBox();
             this.labelQuantidadeVolumes = new System.Windows.Forms.Label();
             this.textBoxMaterialPeso = new System.Windows.Forms.TextBox();
@@ -88,10 +90,9 @@ namespace InserirColeta
             this.labelCamposObrigatorios = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label_CC_Projeto_Alert = new System.Windows.Forms.Label();
-            this.labelMaterialPeso_Alert = new System.Windows.Forms.Label();
-            this.labellabelQuantidadeVolumes_Alert = new System.Windows.Forms.Label();
             this.labelValorNotaFiscal_Alert = new System.Windows.Forms.Label();
             this.labelNotaFiscal_Alert = new System.Windows.Forms.Label();
+            this.labelMaterialDimensoes_Alert = new System.Windows.Forms.Label();
             this.groupBoxEnderecos.SuspendLayout();
             this.groupBoxMaterial.SuspendLayout();
             this.SuspendLayout();
@@ -296,6 +297,7 @@ namespace InserirColeta
             // 
             // groupBoxMaterial
             // 
+            this.groupBoxMaterial.Controls.Add(this.labelMaterialDimensoes_Alert);
             this.groupBoxMaterial.Controls.Add(this.labellabelQuantidadeVolumes_Alert);
             this.groupBoxMaterial.Controls.Add(this.labelMaterialPeso_Alert);
             this.groupBoxMaterial.Controls.Add(this.textBoxQuantidadeVolume);
@@ -314,6 +316,33 @@ namespace InserirColeta
             this.groupBoxMaterial.TabIndex = 6;
             this.groupBoxMaterial.TabStop = false;
             this.groupBoxMaterial.Text = "Material";
+            // 
+            // labellabelQuantidadeVolumes_Alert
+            // 
+            this.labellabelQuantidadeVolumes_Alert.AutoSize = true;
+            this.labellabelQuantidadeVolumes_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labellabelQuantidadeVolumes_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labellabelQuantidadeVolumes_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labellabelQuantidadeVolumes_Alert.Location = new System.Drawing.Point(294, 145);
+            this.labellabelQuantidadeVolumes_Alert.Name = "labellabelQuantidadeVolumes_Alert";
+            this.labellabelQuantidadeVolumes_Alert.Size = new System.Drawing.Size(154, 30);
+            this.labellabelQuantidadeVolumes_Alert.TabIndex = 44;
+            this.labellabelQuantidadeVolumes_Alert.Text = "Somente numeros inteiros\r\nex. 1";
+            this.labellabelQuantidadeVolumes_Alert.Visible = false;
+            this.labellabelQuantidadeVolumes_Alert.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // labelMaterialPeso_Alert
+            // 
+            this.labelMaterialPeso_Alert.AutoSize = true;
+            this.labelMaterialPeso_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labelMaterialPeso_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaterialPeso_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labelMaterialPeso_Alert.Location = new System.Drawing.Point(294, 114);
+            this.labelMaterialPeso_Alert.Name = "labelMaterialPeso_Alert";
+            this.labelMaterialPeso_Alert.Size = new System.Drawing.Size(113, 30);
+            this.labelMaterialPeso_Alert.TabIndex = 43;
+            this.labelMaterialPeso_Alert.Text = "Somente números.\r\nEx. 15,5";
+            this.labelMaterialPeso_Alert.Visible = false;
             // 
             // textBoxQuantidadeVolume
             // 
@@ -375,6 +404,8 @@ namespace InserirColeta
             this.textBoxMaterialDimensoes.Size = new System.Drawing.Size(119, 25);
             this.textBoxMaterialDimensoes.TabIndex = 1;
             this.toolTip1.SetToolTip(this.textBoxMaterialDimensoes, "ex.\r\n1000x1000x1000");
+            this.textBoxMaterialDimensoes.Enter += new System.EventHandler(this.textBoxMaterialDimensoes_Enter);
+            this.textBoxMaterialDimensoes.Leave += new System.EventHandler(this.textBoxMaterialDimensoes_Leave);
             // 
             // labelMaterialDimensoes
             // 
@@ -648,33 +679,6 @@ namespace InserirColeta
             this.label_CC_Projeto_Alert.Text = "Não usar somente números.\r\nPreencher conf. ex. CC4000 ou NB0101 /  AF2820";
             this.label_CC_Projeto_Alert.Visible = false;
             // 
-            // labelMaterialPeso_Alert
-            // 
-            this.labelMaterialPeso_Alert.AutoSize = true;
-            this.labelMaterialPeso_Alert.BackColor = System.Drawing.SystemColors.Info;
-            this.labelMaterialPeso_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaterialPeso_Alert.ForeColor = System.Drawing.Color.Red;
-            this.labelMaterialPeso_Alert.Location = new System.Drawing.Point(294, 114);
-            this.labelMaterialPeso_Alert.Name = "labelMaterialPeso_Alert";
-            this.labelMaterialPeso_Alert.Size = new System.Drawing.Size(113, 30);
-            this.labelMaterialPeso_Alert.TabIndex = 43;
-            this.labelMaterialPeso_Alert.Text = "Somente números.\r\nEx. 15,5";
-            this.labelMaterialPeso_Alert.Visible = false;
-            // 
-            // labellabelQuantidadeVolumes_Alert
-            // 
-            this.labellabelQuantidadeVolumes_Alert.AutoSize = true;
-            this.labellabelQuantidadeVolumes_Alert.BackColor = System.Drawing.SystemColors.Info;
-            this.labellabelQuantidadeVolumes_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labellabelQuantidadeVolumes_Alert.ForeColor = System.Drawing.Color.Red;
-            this.labellabelQuantidadeVolumes_Alert.Location = new System.Drawing.Point(294, 145);
-            this.labellabelQuantidadeVolumes_Alert.Name = "labellabelQuantidadeVolumes_Alert";
-            this.labellabelQuantidadeVolumes_Alert.Size = new System.Drawing.Size(154, 30);
-            this.labellabelQuantidadeVolumes_Alert.TabIndex = 44;
-            this.labellabelQuantidadeVolumes_Alert.Text = "Somente numeros inteiros\r\nex. 1";
-            this.labellabelQuantidadeVolumes_Alert.Visible = false;
-            this.labellabelQuantidadeVolumes_Alert.Click += new System.EventHandler(this.label1_Click);
-            // 
             // labelValorNotaFiscal_Alert
             // 
             this.labelValorNotaFiscal_Alert.AutoSize = true;
@@ -700,6 +704,19 @@ namespace InserirColeta
             this.labelNotaFiscal_Alert.TabIndex = 46;
             this.labelNotaFiscal_Alert.Text = "Evite usar somente números.\r\nPreencher conf. ex. NF123.456";
             this.labelNotaFiscal_Alert.Visible = false;
+            // 
+            // labelMaterialDimensoes_Alert
+            // 
+            this.labelMaterialDimensoes_Alert.AutoSize = true;
+            this.labelMaterialDimensoes_Alert.BackColor = System.Drawing.SystemColors.Info;
+            this.labelMaterialDimensoes_Alert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaterialDimensoes_Alert.ForeColor = System.Drawing.Color.Red;
+            this.labelMaterialDimensoes_Alert.Location = new System.Drawing.Point(294, 83);
+            this.labelMaterialDimensoes_Alert.Name = "labelMaterialDimensoes_Alert";
+            this.labelMaterialDimensoes_Alert.Size = new System.Drawing.Size(208, 30);
+            this.labelMaterialDimensoes_Alert.TabIndex = 45;
+            this.labelMaterialDimensoes_Alert.Text = "Não usar somente números.\r\nPreencher conf. ex. 1000x1000x1000";
+            this.labelMaterialDimensoes_Alert.Visible = false;
             // 
             // FormInserirColeta
             // 
@@ -822,5 +839,6 @@ namespace InserirColeta
         private Label labellabelQuantidadeVolumes_Alert;
         private Label labelValorNotaFiscal_Alert;
         private Label labelNotaFiscal_Alert;
+        private Label labelMaterialDimensoes_Alert;
     }
 }

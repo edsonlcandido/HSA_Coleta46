@@ -319,6 +319,17 @@ namespace InserirColeta
 
         private void buttonIncluir_Click(object sender, EventArgs e)
         {
+            if (Int32.TryParse(this.CC_Projeto, out int result))
+            {
+                MessageBox.Show("O campo CC / Projeto não pode ser um valor somente numérico", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Int32.TryParse(this.materialDimensoes, out int result2))
+            {
+                MessageBox.Show("O campo Dimensões [mm] não pode ser um valor somente numérico", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             viewToColetaModel();
 
             try
@@ -464,6 +475,16 @@ namespace InserirColeta
         private void textBoxNotaFiscal_Leave(object sender, EventArgs e)
         {
             labelNotaFiscal_Alert.Visible = false;
+        }
+
+        private void textBoxMaterialDimensoes_Enter(object sender, EventArgs e)
+        {
+            labelMaterialDimensoes_Alert.Visible = true;
+        }
+
+        private void textBoxMaterialDimensoes_Leave(object sender, EventArgs e)
+        {
+            labelMaterialDimensoes_Alert.Visible = false;
         }
     }
 }
