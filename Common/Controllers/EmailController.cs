@@ -21,7 +21,7 @@ namespace Common.Controllers
 
         public void enviarEmailColetaAdicionada(ColetaModel coleta)
         {
-            this._emailDestinatario = File.ReadAllText("email.db");
+            this._emailDestinatario = File.ReadAllText("email.db") + ";" + coleta.solicitante;
             this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto}".ToUpper();
             this._emailMensagem = 
 $@"Olá,
