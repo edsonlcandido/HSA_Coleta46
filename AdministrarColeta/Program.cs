@@ -22,7 +22,7 @@ namespace AdministrarColeta
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string userName = Environment.UserName;
-            IUsuarioRepository usuariorepository = new UsuarioRepositoryTextDb();
+            IUsuarioRepository usuariorepository = new UsuarioRepository();
             IEnumerable<UsuarioModel> usuariosAtivos = usuariorepository.usuariosAtivos();
             try
             {
