@@ -1,4 +1,5 @@
 ﻿using Common.Models;
+using Common.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,19 +10,28 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace Common.Controllers
 {
-    public class EmailController : IEmail
+    public class EmailController : IEmailController
     {
-        string _emailDestinatario;
+        string _emailDestinatario { 
+            get { return string.Join(";", destinatarios.Select(d => d.email)); } 
+        }
         string _emailTitulo;
         string _emailMensagem;
+
         public EmailController()
         {
-            
+            destinatarios = new List<EmailModel>();
+        }
+
+        public List<EmailModel> destinatarios { 
+            get;
+            set;
         }
 
         public void enviarEmailColetaAdicionada(ColetaModel coleta)
         {
-            this._emailDestinatario = File.ReadAllText("email.db") + ";" + coleta.solicitante;
+            destinatarios.AddRange(EmailRepository.listar().ToList());
+            destinatarios.Add(new EmailModel() { email = coleta.solicitante });
             this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto}".ToUpper();
             this._emailMensagem = 
 $@"Olá,
@@ -41,7 +51,7 @@ Atenciosamente.";
 
         public void enviarEmailColetaConcluida(ColetaModel coleta)
         {
-            this._emailDestinatario = coleta.solicitante;
+            destinatarios.Add(new EmailModel() { email = coleta.solicitante });
             this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto} - CONCLUÍDA".ToUpper();
             this._emailMensagem =
 $@"Olá,
@@ -62,7 +72,7 @@ Atenciosamente.";
 
         public void enviarEmailColetaFalhou(ColetaModel coleta)
         {
-            this._emailDestinatario = coleta.solicitante;
+            destinatarios.Add(new EmailModel() { email = coleta.solicitante });
             this._emailTitulo = $"#{coleta.id} COLETA {coleta.localColeta} X {coleta.localEntrega} - {coleta.dataNecessaria.ToShortDateString()} - {coleta.CC_Projeto} - NÃO REALIZADA".ToUpper();
             this._emailMensagem =
 $@"Olá,

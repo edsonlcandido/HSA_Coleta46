@@ -68,12 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmailController.cs" />
-    <Compile Include="Controllers\IEmail.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Controllers\IEmailController.cs" />
     <Compile Include="Models\ColetaModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Presenters\ColetaPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ColetaRepository.cs" />
+    <Compile Include="Repositories\EmailRepository.cs" />
     <Compile Include="Repositories\IColetaRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
     <Compile Include="Repositories\UsuarioRepositoryStatic.cs" />

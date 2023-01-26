@@ -336,7 +336,7 @@ namespace InserirColeta
             {
                 int  coletaId = _coletaRepository.adicionar(_coletaModel);
                 MessageBox.Show($"#{coletaId} - Coleta incluída com sucesso", this.Text.ToString(),MessageBoxButtons.OK);
-                IEmail email = new EmailController();
+                IEmailController email = new EmailController();
                 ColetaModel coletaCriada = _coletaRepository.obterPeloId(coletaId);
                 email.enviarEmailColetaAdicionada(coletaCriada);
                 this.Close();
@@ -399,7 +399,7 @@ namespace InserirColeta
             {
                 _coletaRepository.editar(_coletaModel);
                 MessageBox.Show($"#{_coletaModel.id} - Coleta alterada com sucesso.", this.Text.ToString(), MessageBoxButtons.OK);
-                IEmail email = new EmailController();
+                IEmailController email = new EmailController();
                 switch (_coletaModel.status)
                 {
                     case "concluído":
